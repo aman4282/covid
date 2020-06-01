@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>covid|symptom checker</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+</head>
+<body>
+		 	<nav id="page-title">
+	 			<a  href="indiacorona.php" >IndiacoronaLive</a>
+	            <a  class="active" href="Safety.html">SafetyGuide</a>
+	            <a   href="quiz.html" >Quiz</a>
+	
+        </nav>
+
+	
+
+<div>
+	<div id="container">
+		<div id="upper">
+		<h1 style="text-align: center;">Quiz</h1>
+		</div>
+			
+		<form  id ="q1" class="questions" data-quesion="1">
+			
+			        <label  for="a" data-quesion="1">1.   For whom  you taking the test? </label>
+			        <br>
+					<input type="radio" name="q1" value="a" >
+					<label for="a" > Yourself</label>
+					<br>
+					<input type="radio" name="q1" value="b" >
+					<label for="b" > Your child</label>
+					<br>
+					<input type="radio" name="q1"  value="c">
+					<label for="c" > Your parents</label>
+					<br>
+					<button id="submit">submit </button>
+		</form>
+	    <form  id ="q2" class="questions" >
+				     <label for="a">2.   What is your gender? </label>
+			        <br>
+					<input type="radio" name="q2" value="a">
+					<label for="a"> Male</label>
+					<br>
+					<input type="radio" name="q2" value="b">
+					<label for="b"> Female</label>	
+					<br>
+					<input type="radio" name="q2" value="c">
+					<label for="c">Other</label>
+					<br>
+					<button id="submit">submit </button>
+               </form>
+               <form  id ="q3" class="questions" >
+				    <label for="a">3.   Do you have currently have any of these health condition? </label>
+			        <br>
+					<input type="checkbox" name="q3" value="a">
+					<label for="a">No existing condition</label>
+					<br>
+					<input type="checkbox" name="q3" value="b">
+					<label for="b"> Asthama</label>	
+					<br>
+					<input type="checkbox" name="q3" value="c">
+					<label for="c">Cancer</label>
+					<br>
+					<input type="checkbox" name="q3" value="d">
+					<label for="d">Chronic lung disease(COPD)</label>
+					<br>
+					<input type="checkbox" name="q3" value="e">
+					<label for="e">Diabities</label>
+					<br>
+					<input type="checkbox" name="q3" value="f">
+					<label for="f">Hypertension</label>
+					<br>
+					<input type="checkbox" name="q3" value="g">
+					<label for="g">Heart disease</label>
+					<br>
+					<button id="submit">submit </button>
+				</form>
+				<form  id ="q4" class="questions" >
+		
+				     <label for="a">4.   Enter your age: </label>
+				     <br>
+			        
+			        <input type="num" name="q4">
+			        <br>
+			        <button id="submit">submit </button>
+			       </form>
+			       <form  id ="q5" class="questions" >
+				    <label for="a">5.   Have you or someone in your family staying with you attended a large gathering / in a migration center in last 14 days? </label>
+			        <br>
+					<input type="radio" name="q5" value="a">
+					<label for="a"> Yes</label>
+					<br>
+					<input type="radio" name="q5" value="b">
+					<label for="b"> No</label>
+					<br>
+					<button id="submit">submit </button>
+					 <br>
+					</form>
+					<form  id ="q6" class="questions" >
+                <br>
+				    <label for="a">6.   Are you having one or more of the following symptoms? </label>
+			        <br>
+					<input type="checkbox" name="q6" value="a">
+					<label for="a">None</label>
+					<br>
+					<input type="checkbox" name="q6" value="b">
+					<label for="b">Fever</label>	
+					<br>
+					<input type="checkbox" name="q6" value="c">
+					<label for="c">Dry cough</label>
+					<br>
+					<input type="checkbox" name="q6" value="d">
+					<label for="d">feeling shortness of breathe</label>
+					<br>
+					<input type="checkbox" name="q6" value="e">
+					<label for="e">Sore throat</label>
+					<br>
+					<input type="checkbox" name="q6" value="f">
+					<label for="f">Hoarseness in voice</label>
+					<br>
+					<input type="checkbox" name="q6" value="g">
+					<label for="g">Headache</label>
+					<br>
+					<input type="checkbox" name="q6" value="h">
+					<label for="h">Running Nose</label>
+					<br>
+					<button id="submit">submit </button>
+					<br>
+
+					
+					
+			</form>
+			<div id="result"></div>
+			
+		</div>
+			
+
+
+
+<script type="text/javascript">
+
+
+
+
+
+
+$(document).ready(function(){
+	$('.questions').hide();
+
+
+$('#q1').show();
+
+$('#q1 #submit').click(function()
+{
+	$('.questions').hide();
+	process('q1');
+    $('#q2').fadeIn(300);
+    return false;
+});
+$('#q2 #submit').click(function()
+{
+	$('.questions').hide();
+	process('q2');
+
+	
+    $('#q3').fadeIn(300);
+
+    return false;
+});
+
+$('#q3 #submit').click(function()
+{
+	$('.questions').hide();
+	process('q3');
+    $('#q4').fadeIn(300);
+    return false;
+});
+$('#q4 #submit').click(function()
+{
+	$('.questions').hide();
+	process('q4');
+    $('#q5').fadeIn(300);
+    return false;
+});
+$('#q5 #submit').click(function()
+{
+	$('.questions').hide();
+	process('q5');
+    $('#q6').fadeIn(300);
+    return false;
+});
+$('#q6 #submit').click(function()
+{
+	$('.questions').hide();
+	process('q6');
+    $('#result').fadeIn(300);
+    return false;
+});
+});
+
+window.addEventListener('load',init,false);
+var score=0;
+
+ function init()
+{
+	sessionStorage.setItem('a1','b');
+	sessionStorage.setItem('a2','a');
+	sessionStorage.setItem('a3','b'); 
+
+	sessionStorage.setItem('a4','b');
+	sessionStorage.setItem('a5','a');
+	sessionStorage.setItem('a6','b','c','d','e','f','g','h');
+
+}
+
+function process(q){ 
+	if(q=="q1"){
+	var submitted=$('input[name=q1]:checked').val();
+	if (submitted == sessionStorage.a1){
+		score++;
+	}
+}
+if(q=="q2"){
+var submitted=$('input[name=q2]:checked').val();
+	if (submitted == sessionStorage.a2){
+		score++;
+	}
+}
+if(q=="q3"){
+var submitted=$('input[name=q3]:checked').val();
+	if (submitted == sessionStorage.a3){
+		score++;
+	}
+}
+if(q=="q4"){
+var submitted=$('input[name=q4]:checked').val();
+	if (submitted == sessionStorage.a4){
+		score++;
+	}
+}
+if(q =="q5"){
+var submitted=$('input[name=q5]:checked').val();
+	if (submitted == sessionStorage.a5){
+		score++;
+	}
+}
+if(q =="q6"){
+var submitted=$('input[name=q6]:checked').val();
+	if (submitted == sessionStorage.a6){
+		score++;
+	}
+	$('#result').html('<h2> u are risk free:'+
+		score+'</h2><a href="quiz.html"></a>' );
+}
+return false;
+}
+
+
+
+
+</script>
+	</div>
+</nav>
+
+
+</body>
+</html>
